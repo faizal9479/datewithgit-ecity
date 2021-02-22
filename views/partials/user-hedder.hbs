@@ -1,0 +1,87 @@
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <a class="navbar-brand" href="/">eCity</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            All Products
+            <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/">All Products</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/chat">Chat</a>
+        </li> --}}
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Cart</a>
+        </li>
+        {{/if}}
+        {{#if user}}
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            English
+            <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/">മലയാളം</a>
+
+
+
+
+
+
+          </div>
+        </li>
+        {{/if}}
+        
+      </ul>
+     
+
+      {{!-- <a href="/user/add-product/" class="btn btn-success ml-auto">Add Product</a> --}}
+      <form class="form-inline my-2 ml-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+    </div>
+
+    <div class="dropdown ml-2">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{#if user}}
+        {{user.Name}}
+        {{else}}
+        accout
+
+        {{/if}}
+
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+        {{#if user}}
+        <a class="dropdown-item" href="/logout">Logout</a>
+        {{else}}
+        <a class="dropdown-item" href="/login">Login</a>
+        {{/if}}
+
+
+      </div>
+    </div>
+  </nav>
+</header>
